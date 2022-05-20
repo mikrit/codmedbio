@@ -3,9 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>КодМедБио</title>
+		<meta name="keywords" content="иммуногистохимические исследования, гистологические исследования, диагностическа клинической цитологии, молекулярно-генетическая диагностика">
+		<meta name="description" content="Лаборатория патоморфологической и молекулярно-генетической диагностики опухолевых и предопухолевых заболеваний человека">
+		
+		<title>Лаборатория патоморфологической и молекулярно-генетической диагностики</title>
 		
 		<?=Html::style('application/media/bootstrap/dist/css/bootstrap.min.css')?>
 		<?=Html::style('application/media/css/site.css')?>
