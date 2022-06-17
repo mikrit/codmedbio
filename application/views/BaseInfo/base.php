@@ -22,27 +22,25 @@
 	
 	<body>
 		<header>
-			<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<nav class="navbar navbar-expand-lg bg-white border-bottom box-shadow">
 				<div class="container">
-					<a class="navbar-brand" href="/">ООО «КодМедБио»</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<a class="navbar-brand" href="/" style="white-space: nowrap;color: #000000;margin-right: 3rem;">ООО «КодМедБио»</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+					<div class="collapse navbar-collapse" id="navbarNav">
 						<?=$menu?>
 					</div>
 				</div>
 			</nav>
 		</header>
 		
-		<div class="container">
-			<main role="main" class="pb-3">
-				<?=$content?>
-			</main>
-		</div>
+		<?=$content?>
 		
 		<footer class="border-top footer text-muted">
 			<div class="container">
+				<h4>ООО «КодМедБио»</h4>
+				
 				<p class="text-muted text-center"><small><a href="http://www.ai-tech.ru">ai-tech.ru</a> &copy;2022<?=(date('Y') != 2022) ? '-'.date('Y') : ''?> All Rights Reserved.</small></p>
 			</div>
 		</footer>
