@@ -17,5 +17,5 @@
 		<dd><a href="mailto:admin@codmedbio.ru">admin@codmedbio.ru</a></dd>
 	</dl>
 	<h4 class="mt-3">Схема проезда</h4>
-	<?=HTML::image('application/media/img/map.png', ['style' => 'margin-bottom: 50px;'])?>
+	<?=HTML::image('application/media/img/map.png', ['style' => 'margin-bottom: 120px;'])?>
 </div>
