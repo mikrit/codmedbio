@@ -26,13 +26,17 @@ body {
 }
 
 .nav-link {
-    color: #000000 !important;
+    color: #000000;
     font-size: 13px;
     font-weight: bold;
 }
 
-.nav-item .active. nav-link {
-    color: #1b6ec2 !important;
+.nav-item.active>.nav-link {
+    color: #00a1e5;
+}
+
+.nav-item>.nav-link:hover {
+    color: #00a1e5;
 }
 
 .hd1 {

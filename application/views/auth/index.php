@@ -38,7 +38,7 @@
 					<div id="error_password_reg"></div>
 					<input class="form-control form-control2" name="password_confirm_reg" id="password_confirm_reg" placeholder="Повторите пароль" type="password">
 					<div id="error_password_confirm_reg"></div>
-					<?= HTML::anchor('#', 'Регистрация', array('id' => 'registration_ajax', 'class' => 'btn btn-lg btn-primary btn-block btn-block2'));?>
+					<?= HTML::anchor('#', 'Регистрация', array('id' => 'registration_ajax', 'class' => 'btn btn-lg btn-primary btn-block btn-block2'))?>
 					<!--button class="btn btn-lg btn-primary btn-block btn-block2" type="submit">Регистрация</button-->
 				</form>
 			</div>

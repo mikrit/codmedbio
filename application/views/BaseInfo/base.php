@@ -28,6 +28,7 @@
     <body>
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
+				<a class="navbar-brand" href="/" style="white-space: nowrap;color: #000000;margin-right: 3rem;">ООО «КодМедБио»</a>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -35,8 +36,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <?=Html::image('media/img/logo_5.png', array('width' => 50, 'height' => 50));?>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
                 <div class="collapse navbar-collapse">
                     <?=$menu?>
