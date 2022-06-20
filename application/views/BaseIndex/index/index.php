@@ -38,8 +38,8 @@
 </style>
 
 <div class="blue" style="background-color: #e0f3fb;height: 300px;">
-	<div id="flex-container" class="container" style="height: 300px;padding: 10px 0px;">
-		<div id="child-1" class="hd1">
+	<div id="flex-container" class="container" style="height: 300px;padding: 10px 10px;">
+		<div id="child-1" class="hd1" style="width: 85%">
 			Лаборатория патоморфологической и молекулярно-генетической диагностики  опухолевых и предопухолевых  заболеваний  человека
 		</div>
 		<div id="child-2">
@@ -71,7 +71,7 @@
 </div>
 
 <div class="blue" style="background-color: #e0f3fb;min-height: 300px;">
-	<div class="container" style="padding: 10px 0px;">
+	<div class="container" style="padding: 10px 10px;">
 		<h4 style="color: #0057a7;font-weight: bold;">О НАС</h4>
 		<p>
 			Код Мед Био - это коммерческая организация, созданная на базе и в тесном сотрудничестве с ФГБУ "РОНЦ им. Н.Н. Блохина" Минздрава России. Основная задача нашей организации осуществление широкого спектра морфологических исследований начиная от традиционных патологоанатомических до современных молекулярно-биологических исследований.
