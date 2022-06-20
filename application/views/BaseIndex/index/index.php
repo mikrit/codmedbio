@@ -37,8 +37,8 @@
 	}
 </style>
 
-<div class="blue" style="background-color: #e0f3fb;height: 300px;">
-	<div id="flex-container" class="container" style="height: 300px;padding: 10px 10px;">
+<div class="blue" style="background-color: #e0f3fb;min-height: 300px;">
+	<div id="flex-container" class="container" style="min-height: 300px;padding: 10px 10px;">
 		<div id="child-1" class="hd1" style="width: 85%">
 			Лаборатория патоморфологической и молекулярно-генетической диагностики  опухолевых и предопухолевых  заболеваний  человека
 		</div>
