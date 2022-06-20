@@ -6,7 +6,7 @@ class Controller_Data extends Controller_BaseLK
     {
         $this->template->content = View::factory('BaseLK/data/index')->render();
     }
-
+	
     public function action_list_analyzes()
     {
         $view = View::factory('BaseLK/data/list_analyzes');
