@@ -38,7 +38,7 @@
 </style>
 
 <div class="blue" style="background-color: #e0f3fb;height: 300px;">
-	<div id="flex-container" class="container" style="height: 300px;">
+	<div id="flex-container" class="container" style="height: 300px;padding: 10px 0px;">
 		<div id="child-1" class="hd1">
 			Лаборатория патоморфологической и молекулярно-генетической диагностики  опухолевых и предопухолевых  заболеваний  человека
 		</div>
@@ -49,7 +49,7 @@
 </div>
 
 <div style="min-height: 300px;">
-	<div id="flex-container" class="container" style="min-height: 280px;">
+	<div id="flex-container" class="container" style="min-height: 300px;padding: 10px 0px;">
 		<div id="child-1">
 			<?=HTML::image('media/media/img/image3.jpg', ['id' => 'img1'])?>
 		</div>
