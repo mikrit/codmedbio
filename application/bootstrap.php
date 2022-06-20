@@ -1,4 +1,4 @@
-<?php
+<?php defined('SYSPATH') or die('No direct script access.');
 
 // -- Environment setup --------------------------------------------------------
 
@@ -22,7 +22,7 @@ else
  * @link http://kohanaframework.org/guide/using.configuration
  * @link http://www.php.net/manual/timezones
  */
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('Europe/Moscow');
 
 /**
  * Set the default locale.
@@ -30,7 +30,7 @@ date_default_timezone_set('America/Chicago');
  * @link http://kohanaframework.org/guide/using.configuration
  * @link http://www.php.net/manual/function.setlocale
  */
-setlocale(LC_ALL, 'en_US.utf-8');
+setlocale(LC_ALL, 'ru_RU.UTF-8');
 
 /**
  * Enable the Kohana auto-loader.
@@ -38,7 +38,7 @@ setlocale(LC_ALL, 'en_US.utf-8');
  * @link http://kohanaframework.org/guide/using.autoloading
  * @link http://www.php.net/manual/function.spl-autoload-register
  */
-spl_autoload_register(['Kohana', 'auto_load']);
+spl_autoload_register(array('Kohana', 'auto_load'));
 
 /**
  * Optionally, you can enable a compatibility auto-loader for use with
@@ -57,14 +57,6 @@ spl_autoload_register(['Kohana', 'auto_load']);
 ini_set('unserialize_callback_func', 'spl_autoload_call');
 
 /**
- * Enable composer autoload libraries
- */
-if (is_file(DOCROOT.'vendor/autoload.php'))
-{
-	require DOCROOT.'vendor/autoload.php';
-}
-
-/**
  * Set the mb_substitute_character to "none"
  *
  * @link http://www.php.net/manual/function.mb-substitute-character.php
@@ -76,13 +68,15 @@ mb_substitute_character('none');
 /**
  * Set the default language
  */
-I18n::lang('en-us');
+I18n::lang('ru-ru');
 
 if (isset($_SERVER['SERVER_PROTOCOL']))
 {
 	// Replace the default protocol.
 	HTTP::$protocol = $_SERVER['SERVER_PROTOCOL'];
 }
+
+//var_dump($_SERVER);die;
 
 /**
  * Set Kohana::$environment if a 'KOHANA_ENV' environment variable has been supplied.
@@ -101,7 +95,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  * The following options are available:
  *
  * - string   base_url    path, and optionally domain, of your application   NULL
- * - string   index_file  name of your index file, usually "index.php", if set to FALSE uses clean URLS     index.php
+ * - string   index_file  name of your index file, usually "index.php"       index.php
  * - string   charset     internal character set used for input and output   utf-8
  * - string   cache_dir   set the internal cache directory                   APPPATH/cache
  * - integer  cache_life  lifetime, in seconds, of items cached              60
@@ -110,10 +104,11 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  caching     enable or disable internal caching                 FALSE
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
-Kohana::init([
+Kohana::init(array(
 	'base_url'   => '/',
 	'index_file' => FALSE,
-]);
+	'errors' => TRUE
+));
 
 /**
  * Attach the file write to logging. Multiple writers are supported.
@@ -128,48 +123,41 @@ Kohana::$config->attach(new Config_File);
 /**
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
-Kohana::modules([
-	// 'encrypt'    => MODPATH.'encrypt',    // Encryption supprt
-	 'auth'       => MODPATH.'auth',       // Basic authentication
+Kohana::modules(array(
+	'pagination' => MODPATH.'pagination',
+	'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	 'database'   => MODPATH.'database',   // Database access
-	// 'image'      => MODPATH.'image',      // Image manipulation
+	'database'   => MODPATH.'database',   // Database access
+	//'image'      => MODPATH.'image',      // Image manipulation
 	// 'minion'     => MODPATH.'minion',     // CLI Tasks
-	 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-	 'pagination' => MODPATH.'pagination', // Pagination
+	'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	]);
+	//'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+	));
 
 /**
  * Cookie Salt
  * @see  http://kohanaframework.org/3.3/guide/kohana/cookies
- *
+ * 
  * If you have not defined a cookie salt in your Cookie class then
  * uncomment the line below and define a preferrably long salt.
  */
-// Cookie::$salt = NULL;
-/**
- * Cookie HttpOnly directive
- * If set to true, disallows cookies to be accessed from JavaScript
- * @see https://en.wikipedia.org/wiki/Session_hijacking
- */
-// Cookie::$httponly = TRUE;
-/**
- * If website runs on secure protocol HTTPS, allows cookies only to be transmitted
- * via HTTPS.
- * Warning: HSTS must also be enabled in .htaccess, otherwise first request
- * to http://www.example.com will still reveal this cookie
- */
-// Cookie::$secure = isset($_SERVER['HTTPS']) AND $_SERVER['HTTPS'] == 'on' ? TRUE : FALSE;
+
+Cookie::$salt = '2435ewt2345erw23gthgk';
+
+Route::set('vhod', 'vhod')
+	->defaults(array(
+		'controller' => 'info',
+		'action'     => 'vhod',
+	));
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults([
+	->defaults(array(
 		'controller' => 'index',
 		'action'     => 'index',
-	]);
+	));

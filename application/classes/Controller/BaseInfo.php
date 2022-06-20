@@ -3,21 +3,19 @@
 class Controller_BaseInfo extends Controller_Template
 {
 	public $template = 'BaseInfo/base';
-	
+
 	public function __construct(Request $request, Response $response)
 	{
 		parent::__construct($request, $response);
 	}
-	
+
 	public function before()
 	{
 		parent::before();
-		
+
 		$menu = View::factory('BaseInfo/menu');
-		
-		$menu->request = explode("/", Request::current()->uri());
-		
-		$this->template->menu    = $menu->render();
+
+		$this->template->menu = $menu->render();
 		$this->template->content = '';
 	}
 }

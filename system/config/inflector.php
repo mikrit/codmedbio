@@ -50,6 +50,7 @@ return [
 	],
 
 	'irregular' => [
+		'analysis'    => 'analyzes',
 		'appendix'    => 'appendices',
 		'cactus'      => 'cacti',
 		'calf'        => 'calves',
