@@ -20,6 +20,46 @@ class Controller_Index extends Controller_BaseIndex
 	{
 		$view = View::factory('BaseIndex/index/price');
 		
+		$find = '';
+		
+		if(isset($_POST['submit']))
+		{
+			$find = $_POST['find'];
+			$themes = [];
+			$themes_orm = ORM::factory('theme')->where('show', '=', 1)->find_all();
+			foreach($themes_orm as $theme)
+			{
+				$themes[$theme->id] = $theme;
+			}
+			
+			$prices = [];
+			$prices_orm = ORM::factory('price')->where('show', '=', 1)->where('title', 'like', '%'.$_POST['find'].'%')->find_all();
+			foreach($prices_orm as $price)
+			{
+				$prices[$price->theme_id][$price->id] = $price;
+			}
+		}
+		else
+		{
+			$themes = [];
+			$themes_orm = ORM::factory('theme')->where('show', '=', 1)->find_all();
+			foreach($themes_orm as $theme)
+			{
+				$themes[$theme->id] = $theme;
+			}
+			
+			$prices = [];
+			$prices_orm = ORM::factory('price')->where('show', '=', 1)->find_all();
+			foreach($prices_orm as $price)
+			{
+				$prices[$price->theme_id][$price->id] = $price;
+			}
+		}
+		
+		$view->themes = $themes;
+		$view->prices = $prices;
+		$view->find = $find;
+		
 		$this->template->content = $view->render();
 	}
 	
