@@ -31,6 +31,39 @@ class Controller_Ajax extends Controller
 			echo "<img src='/media/img/".$_POST['status'].".png' alt='".$statuses[$_POST['status']]."' title='".$statuses[$_POST['status']]."', width = '32', height = '32'/>";
 		}
 	}
+	
+	public function action_change_show()
+	{
+		if($_POST)
+		{
+			$orm = ORM::factory($_POST['model'], $_POST['elem_id']);
+			
+			$orm->show = $_POST['val'] === 'true' ? 1 : 0;
+			$orm->save();
+			
+			echo true;
+		}
+	}
+	
+	public function action_get_data_price()
+	{
+		if($_POST)
+		{
+			$list_themes = ORM::factory('theme')->where('show', '=', 1)->find_all();
+			
+			$price = ORM::factory('price', $_POST['elem_id']);
+			
+			$view = View::factory('BaseLK/data/select_themes');
+			$view->list_themes = $list_themes;
+			$view->theme_id = $price->theme->id;
+			
+			echo json_encode([
+				'themes' => $view->render(),
+				'title' => $price->title,
+				'price' => $price->price
+			]);
+		}
+	}
 
 	public function action_get_list_statuses()
 	{

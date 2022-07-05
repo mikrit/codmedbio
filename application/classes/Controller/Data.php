@@ -259,4 +259,39 @@ class Controller_Data extends Controller_BaseLK
 
 		$this->template->content = $view->render();
 	}
+	
+	public function action_list_themes()
+	{
+		$view = View::factory('BaseLK/data/list_themes');
+		$view->data = ORM::factory('theme')->find_all();
+		
+		$this->template->content = $view->render();
+	}
+	
+	public function action_list_prices()
+	{
+		$view = View::factory('BaseLK/data/list_prices');
+		
+		$themes = [];
+		$themes2 = [];
+		$themes_orm = ORM::factory('theme')->where('show', '=', 1)->find_all();
+		foreach($themes_orm as $theme)
+		{
+			$themes[$theme->id] = $theme;
+			$themes2[$theme->id] = $theme->title;
+		}
+		
+		$prices = [];
+		$prices_orm = ORM::factory('price')->where('show', '=', 1)->find_all();
+		foreach($prices_orm as $price)
+		{
+			$prices[$price->theme_id][$price->id] = $price;
+		}
+		
+		$view->themes = $themes;
+		$view->themes2 = $themes2;
+		$view->prices = $prices;
+		
+		$this->template->content = $view->render();
+	}
 }

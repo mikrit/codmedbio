@@ -18,6 +18,9 @@
 	<?=Html::style('media/css/ladda-themeless.min.css')?>
 	<?=Html::style('media/css/style.css')?>
 	<?=Html::style('media/css/date_input.css')?>
+	
+	<?=Html::style('media/css/select2.min.css')?>
+	<?=Html::style('media/css/checkbox-ios.css')?>
 
 	<?=Html::script('media/js/jquery.js')?>
 	<?=Html::script('media/js/jquery.date_input.js')?>
@@ -26,6 +29,7 @@
 	<?=Html::script('media/js/ladda.min.js')?>
 	<?=Html::script('media/js/tinymce/tinymce.min.js')?>
 	<?=Html::script('media/js/project.js')?>
+	<?=Html::script('media/js/select2.min.js')?>
 
 	<?=Html::script('media/bootstrap/js/bootstrap.min.js')?>
 	<?=Html::script('media/bootstrap/js/bootstrap-markdown.js')?>

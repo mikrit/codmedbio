@@ -5,11 +5,15 @@
 <table id="user">
     <tr>
         <td>
-            <?=Html::anchor('data/list_analyzes', 'Виды анализов');?>
+            <?=Html::anchor('data/list_analyzes', 'Виды анализов')?>
             <br/>
-            <?=Html::anchor('data/list_statuses', 'Стутус гена');?>
+            <?=Html::anchor('data/list_statuses', 'Стутус гена')?>
             <br/>
-			<?=Html::anchor('data/list_methods', 'Методы исследования');?>
+			<?=Html::anchor('data/list_methods', 'Методы исследования')?>
+			<br/>
+			<?=Html::anchor('data/list_themes', 'Заголовки исследований (Сайт)')?>
+			<br/>
+			<?=Html::anchor('data/list_prices', 'Прайс исследований (Сайт)')?>
 			<br/>
         </td>
     </tr>
