@@ -274,7 +274,7 @@ class Controller_Data extends Controller_BaseLK
 		
 		$themes = [];
 		$themes2 = [];
-		$themes_orm = ORM::factory('theme')->where('show', '=', 1)->find_all();
+		$themes_orm = ORM::factory('theme')->find_all();
 		foreach($themes_orm as $theme)
 		{
 			$themes[$theme->id] = $theme;
@@ -282,7 +282,7 @@ class Controller_Data extends Controller_BaseLK
 		}
 		
 		$prices = [];
-		$prices_orm = ORM::factory('price')->where('show', '=', 1)->find_all();
+		$prices_orm = ORM::factory('price')->find_all();
 		foreach($prices_orm as $price)
 		{
 			$prices[$price->theme_id][$price->id] = $price;

@@ -3,7 +3,7 @@
 <div class="t-center">
     <div id="title">Добавление статуса гена</div>
 
-    <?=Form::open('data/add_status/',array('method'=>'post'));?>
+    <?=Form::open('data/add_status/',array('method'=>'post'))?>
     <table class="t_form">
         <?php if(count($errors)):?>
             <?php foreach ($errors as $error):?>
@@ -19,14 +19,14 @@
             </td>
         </tr>
         <tr>
-            <td>Статус гена:</td><td><?=Form::input('status', $data['status'], array('class' => 'input'));?></td>
+            <td>Статус гена:</td><td><?=Form::input('status', $data['status'], array('class' => 'input'))?></td>
         </tr>
 		<tr>
-			<td>Исследование:</td><td><?=Form::select('analysis_id', $analyzes, $data['analysis_id']);?></td>
+			<td>Исследование:</td><td><?=Form::select('analysis_id', $analyzes, $data['analysis_id'])?></td>
 		</tr>
         <tr>
-            <td class="right" colspan="2"><?=Form::input('submit', 'Добавить',array('id' => 'button', 'type'=>'submit'));?></td>
+            <td class="right" colspan="2"><?=Form::input('submit', 'Добавить',array('id' => 'button', 'type'=>'submit'))?></td>
         </tr>
     </table>
-    <?=Form::close();?>
+    <?=Form::close()?>
 </div>

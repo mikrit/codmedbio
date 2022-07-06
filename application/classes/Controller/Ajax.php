@@ -60,9 +60,29 @@ class Controller_Ajax extends Controller
 			echo json_encode([
 				'themes' => $view->render(),
 				'title' => $price->title,
+				'code' => $price->code,
 				'price' => $price->price
 			]);
 		}
+	}
+	
+	public function action_add_price()
+	{
+		$new_price = ORM::factory('price');
+		
+		$new_price->theme_id = $_POST['theme'];
+		$new_price->code = $_POST['code'];
+		$new_price->title = $_POST['title'];
+		$new_price->price = $_POST['price'];
+		$new_price->show = 1;
+		$new_price->save();
+		
+		echo json_encode([1]);
+	}
+	
+	public function action_edit_price()
+	{
+	    var_dump($_POST);die;
 	}
 
 	public function action_get_list_statuses()

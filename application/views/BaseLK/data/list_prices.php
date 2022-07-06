@@ -2,6 +2,10 @@
 
 <div id="title">Заголовки исследований (Сайт)</div>
 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_add_theme">
+	Добавить новую тему
+</button>
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_add_price">
 	Добавить новый анализ
 </button>
@@ -41,19 +45,22 @@
 	<?php foreach($themes as $theme){?>
 		<?php if(isset($prices[$theme->id])){?>
 			<tr>
-				<th><?=$theme->code?></th>
-				<th><?=$theme->title?></th>
+				<th style="cursor: pointer;"><?=$theme->code?></th>
+				<th style="cursor: pointer;"><?=$theme->title?></th>
 				<th></th>
-				<th></th>
+				<th>
+					<input id="id_t_<?=$theme->id?>" class="ios8-switch ios8-switch-sm" data-id="<?=$theme->id?>" data-model="theme" type="checkbox" <?=$theme->show === '1' ? 'checked' : ''?> style="cursor: pointer;">
+					<label class="form-label" for="id_t_<?=$theme->id?>"></label>
+				</th>
 			</tr>
 			<?php foreach($prices[$theme->id] as $price){?>
-				<tr class="price" style="cursor: pointer;" data-id="<?=$price->id?>" data-toggle="modal" data-target="#modal_edit_price">
-					<td><?=$price->code?></td>
-					<td><?=$price->title?></td>
-					<td><?=$price->price?></td>
+				<tr class="price" data-id="<?=$price->id?>">
+					<td data-toggle="modal" data-target="#modal_edit_price" style="cursor: pointer;"><?=$price->code?></td>
+					<td data-toggle="modal" data-target="#modal_edit_price" style="cursor: pointer;"><?=$price->title?></td>
+					<td data-toggle="modal" data-target="#modal_edit_price" style="cursor: pointer;"><?=$price->price?></td>
 					<td>
-						<input id="id_<?=$price->id?>" class="ios8-switch ios8-switch-sm" data-id="<?=$price->id?>" type="checkbox" <?=$price->show === '1' ? 'checked' : ''?>>
-						<label class="form-label" for="id_<?=$price->id?>"></label>
+						<input id="id_p_<?=$price->id?>" class="ios8-switch ios8-switch-sm" data-id="<?=$price->id?>" data-model="price" type="checkbox" <?=$price->show === '1' ? 'checked' : ''?> style="cursor: pointer;">
+						<label class="form-label" for="id_p_<?=$price->id?>"></label>
 					</td>
 				</tr>
 			<?php }?>
@@ -63,70 +70,84 @@
 
 
 <div id="modal_add_price" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" style="width: 400px;">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Добавление анализа</h4>
-			</div>
-			
-			<div class="modal-body">
-				<div class="form-group">
-					<label class="form-label">Темы</label>
-					<?=Form::select('theme', $themes2, NULL, ['id' => "theme", 'class' => 'form-select'])?>
+	<div class="modal-dialog" style="width: 600px;">
+		<?=Form::open(NULL, array('id' => 'add_price', 'method'=>'post'))?>
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Добавление анализа</h4>
 				</div>
 				
-				<div class="form-group">
-					<label>Название:</label>
-					<input id="title" class="form-control" name="title" type="text">
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="form-label">Темы</label>
+						<?=Form::select('theme', $themes2, NULL, ['class' => 'form-select'])?>
+					</div>
+					
+					<div class="form-group">
+						<label>Код:</label>
+						<input class="form-control" name="code" type="text" required>
+					</div>
+					
+					<div class="form-group">
+						<label>Название:</label>
+						<textarea class="form-control" name="title" rows="3" style="resize: none;" required></textarea>
+					</div>
+					
+					<div class="form-group">
+						<label>Сумма:</label>
+						<input class="form-control" name="price" type="text" pattern="[0-9]+(\.[0-9]{1,2})?%?" required>
+					</div>
 				</div>
 				
-				<div class="form-group">
-					<label>Сумма:</label>
-					<input id="price" class="form-control" name="price" type="text">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+					<button class="btn btn-primary" type="submit">Добавить</button>
 				</div>
 			</div>
-			
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-				<button id="confirm_add_price" class="btn btn-primary" type="button" >Добавить</button>
-			</div>
-		</div>
+		<?=Form::close()?>
 	</div>
 </div>
 
 <div id="modal_edit_price" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" style="width: 600px;">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Редактирование анализа</h4>
-			</div>
-			
-			<div class="modal-body">
-				<div class="form-group">
-					<label class="form-label">Темы</label>
-					<select id="e_theme" class="form-control" name="theme">
+		<?=Form::open(NULL, array('id' => 'edit_price', 'method'=>'post'))?>
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Редактирование анализа</h4>
+				</div>
+				
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="form-label">Темы</label>
+						<select id="e_theme" class="form-control" name="theme">
+						
+						</select>
+					</div>
 					
-					</select>
+					<div class="form-group">
+						<label>Код:</label>
+						<input id="e_code" class="form-control" name="code" type="text" required>
+					</div>
+					
+					<div class="form-group">
+						<label>Название:</label>
+						<textarea id="e_title" class="form-control" name="title" rows="3" style="resize: none;" required></textarea>
+					</div>
+					
+					<div class="form-group">
+						<label>Сумма:</label>
+						<input id="e_price" class="form-control" name="price" type="text" required>
+					</div>
 				</div>
 				
-				<div class="form-group">
-					<label>Название:</label>
-					<textarea id="e_title" class="form-control" name="title" rows="3" style="resize: none;"></textarea>
-				</div>
-				
-				<div class="form-group">
-					<label>Сумма:</label>
-					<input id="e_price" class="form-control" name="price" type="text">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+					<button class="btn btn-primary" type="submit">Обновить</button>
 				</div>
 			</div>
-			
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-				<button id="confirm_edit_price" class="btn btn-primary" type="button" >Обновить</button>
-			</div>
-		</div>
+		<?=Form::close()?>
 	</div>
 </div>
 
@@ -144,7 +165,7 @@
 			type: "POST",
 			url: "/ajax/change_show",
 			data: {
-				model: 'price',
+				model: $(this).data('model'),
 				elem_id: elem_id,
 				val: val
 			},
@@ -157,8 +178,9 @@
 		});
 	});
 	
+	let elem_id = 0;
 	$(document).on('click', '.price', function(){
-		let elem_id = $(this).data('id');
+		elem_id = $(this).data('id');
 		
 		$.ajax({
 			type: "POST",
@@ -169,8 +191,55 @@
 			},
 			success: function(data){
 				$('#e_theme').html(data.themes);
+				$('#e_code').val(data.code);
 				$('#e_title').html(data.title);
 				$('#e_price').val(data.price);
+			},
+			error: function(data){
+				alert("Ошибка!");
+			}
+		});
+	});
+	
+	$(document).on('submit', '#add_price', function(e){
+		e.preventDefault();
+		let fd = new FormData($('#add_price').get(0));
+		
+		console.log(fd);
+		
+		$.ajax({
+			type: "POST",
+			url: "/ajax/add_price",
+			//dataType: 'json',
+			contentType: false,
+			processData: false,
+			data: fd,
+			success: function(data){
+			
+			},
+			error: function(data){
+				alert("Ошибка!");
+			}
+		});
+		
+		return false;
+	});
+	
+	$(document).on('submit', '#edit_price', function(e){
+		e.preventDefault();
+		let fd = new FormData($('#edit_price').get(0));
+		
+		fd.append('elem_id', elem_id);
+		
+		$.ajax({
+			type: "POST",
+			url: "/ajax/edit_price",
+			dataType: 'json',
+			contentType: false,
+			processData: false,
+			data: fd,
+			success: function(data){
+			
 			},
 			error: function(data){
 				alert("Ошибка!");
