@@ -1,16 +1,21 @@
 ﻿@font-face {
-    font-family: AbitareSans;
-    src: url(../fonts/a_font1.ttf);
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
 }
 
 @font-face {
-    font-family: Gheagrapalat;
-    src: url(../fonts/g_font2.ttf);
+    font-family: Sans1;
+    src: url(../fonts/ResistSans1.ttf);
+}
+
+@font-face {
+    font-family: Sans2;
+    src: url(../fonts/ResistSans2.ttf);
 }
 
 body {
     margin-bottom: 60px;
-    /*font-family: "AbitareSans";*/
+    font-family: 'Roboto', sans-serif;
 }
 
 .border-top {
@@ -27,7 +32,6 @@ body {
 
 .nav-link {
     color: #000000!important;
-    font-family: "AbitareSans";
     font-size: 13px;
     font-weight: bold;
 }
@@ -38,10 +42,6 @@ body {
 
 .nav-item>.nav-link:hover {
     color: #00a1e5!important;
-}
-
-.hd1 {
-    font-family: "Gheagrapalat";
 }
 
 .hd1 {
@@ -56,13 +56,13 @@ body {
 #img1 {
     width: 550px;
     height: 280px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 #img2 {
     width: 100%;
     height: 300px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 #flex-container {
