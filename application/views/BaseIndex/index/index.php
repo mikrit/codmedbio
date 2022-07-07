@@ -38,22 +38,22 @@
 </style>
 
 <div class="blue" style="background-color: #e0f3fb;min-height: 300px;">
-	<div id="flex-container" class="container" style="min-height: 300px;padding: 10px 10px;">
-		<div id="child-1" class="hd1" style="width: 85%">
+	<div class="container flex-container" style="min-height: 300px;padding: 10px 10px;">
+		<div class="hd1 child-1" style="width: 85%">
 			Лаборатория патоморфологической и молекулярно-генетической диагностики  опухолевых и предопухолевых  заболеваний  человека
 		</div>
-		<div id="child-2">
+		<div class="child-2">
 			<?=HTML::image('media/media/img/image1.webp', ['id' => 'img1', 'alt' => ''])?>
 		</div>
 	</div>
 </div>
 
 <div style="min-height: 300px;">
-	<div id="flex-container" class="container" style="min-height: 300px;padding: 10px 0px;">
-		<div id="child-1">
+	<div class="container flex-container" style="min-height: 300px;padding: 10px 0px;">
+		<div class="child-1">
 			<?=HTML::image('media/media/img/image3.jpg', ['id' => 'img1', 'alt' => ''])?>
 		</div>
-		<div id="child-2">
+		<div class="child-2">
 			<div class="jumbotron card">
 				<h2>Проверить анализ</h2>
 				<div id="error_fio" class="alert alert-danger" role="alert" style="display: none">

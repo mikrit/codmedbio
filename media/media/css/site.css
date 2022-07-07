@@ -65,18 +65,18 @@ body {
     border-radius: 15px;
 }
 
-#flex-container {
+.flex-container {
     display: flex;
     align-content: center;
     justify-content: space-between;
 }
 
-#child-1 {
+.child-1 {
     flex-basis: 45%;
     align-self: center;
 }
 
-#child-2 {
+.child-2 {
     flex-basis: 35%;
     align-self: center;
 }
@@ -99,18 +99,18 @@ body {
         border-radius: 10px;
     }
 
-    #flex-container {
+    .flex-container {
         display: flex;
         align-content: center;
         justify-content: space-between;
     }
 
-    #child-1 {
+    .child-1 {
         flex-basis: 45%;
         align-self: center;
     }
 
-    #child-2 {
+    .child-2 {
         flex-basis: 40%;
         align-self: center;
     }
@@ -139,7 +139,7 @@ body {
         margin-bottom: 10px;
     }
 
-    #flex-container {
+    .flex-container {
         display: flex;
         height: 90%;
         justify-content: space-around;
@@ -147,12 +147,12 @@ body {
         flex-direction: column;
     }
 
-    #child-1 {
+    .child-1 {
         height: fit-content;
         width: fit-content;
     }
 
-    #child-2 {
+    .child-2 {
         height: fit-content;
         width: fit-content;
     }

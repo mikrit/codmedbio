@@ -248,7 +248,7 @@ class Kohana_HTML {
 		$attributes['src'] = $file;
 
 		// Set the script type
-		$attributes['type'] = 'text/javascript';
+		//$attributes['type'] = 'text/javascript';
 
 		return '<script'.HTML::attributes($attributes).'></script>';
 	}
