@@ -34,8 +34,8 @@
 	<?=Html::script('media/bootstrap/js/bootstrap.min.js')?>
 	<?=Html::script('media/bootstrap/js/bootstrap-markdown.js')?>
 
-	<link rel="apple-touch-icon" href="media/img/cash.png">
-	<link rel="icon" href="media/img/cash.ico">
+	<link rel="apple-touch-icon" href="/media/img/logo1.png">
+	<link rel="icon" href="/media/img/logo.ico">
 
 	<script type="text/javascript">
 		tinymce.init({

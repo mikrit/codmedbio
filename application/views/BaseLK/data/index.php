@@ -11,8 +11,6 @@
             <br/>
 			<?=Html::anchor('data/list_methods', 'Методы исследования')?>
 			<br/>
-			<?=Html::anchor('data/list_themes', 'Заголовки исследований (Сайт)')?>
-			<br/>
 			<?=Html::anchor('data/list_prices', 'Прайс исследований (Сайт)')?>
 			<br/>
         </td>

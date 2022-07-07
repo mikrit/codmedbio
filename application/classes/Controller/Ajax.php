@@ -45,25 +45,40 @@ class Controller_Ajax extends Controller
 		}
 	}
 	
-	public function action_get_data_price()
+	public function action_add_theme()
+	{
+		$new_theme = ORM::factory('theme');
+		
+		$new_theme->code = $_POST['code'];
+		$new_theme->title = $_POST['title'];
+		$new_theme->show = 1;
+		$new_theme->save();
+		
+		echo json_encode([1]);
+	}
+	
+	public function action_get_data_theme()
 	{
 		if($_POST)
 		{
-			$list_themes = ORM::factory('theme')->where('show', '=', 1)->find_all();
-			
-			$price = ORM::factory('price', $_POST['elem_id']);
-			
-			$view = View::factory('BaseLK/data/select_themes');
-			$view->list_themes = $list_themes;
-			$view->theme_id = $price->theme->id;
+			$theme = ORM::factory('theme', $_POST['elem_id']);
 			
 			echo json_encode([
-				'themes' => $view->render(),
-				'title' => $price->title,
-				'code' => $price->code,
-				'price' => $price->price
+				'title' => $theme->title,
+				'code' => $theme->code
 			]);
 		}
+	}
+	
+	public function action_edit_theme()
+	{
+		$price = ORM::factory('theme', $_POST['elem_id']);
+		
+		$price->code = $_POST['code'];
+		$price->title = $_POST['title'];
+		$price->save();
+		
+		echo json_encode([1]);
 	}
 	
 	public function action_add_price()
@@ -80,9 +95,38 @@ class Controller_Ajax extends Controller
 		echo json_encode([1]);
 	}
 	
+	public function action_get_data_price()
+	{
+		if($_POST)
+		{
+			$list_themes = ORM::factory('theme')->find_all();
+			
+			$price = ORM::factory('price', $_POST['elem_id']);
+			
+			$view = View::factory('BaseLK/data/select_themes');
+			$view->list_themes = $list_themes;
+			$view->theme_id = $price->theme->id;
+			
+			echo json_encode([
+				'themes' => $view->render(),
+				'title' => $price->title,
+				'code' => $price->code,
+				'price' => $price->price
+			]);
+		}
+	}
+	
 	public function action_edit_price()
 	{
-	    var_dump($_POST);die;
+		$price = ORM::factory('price', $_POST['elem_id']);
+		
+		$price->theme_id = $_POST['theme'];
+		$price->code = $_POST['code'];
+		$price->title = $_POST['title'];
+		$price->price = $_POST['price'];
+		$price->save();
+		
+		echo json_encode([1]);
 	}
 
 	public function action_get_list_statuses()
