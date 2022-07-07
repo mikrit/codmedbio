@@ -1,42 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');?>
 
-<style>
-	.card-container.card {
-		max-width: 350px;
-		padding: 40px 40px;
-	}
-	
-	.card {
-		background-color: #F7F7F7;
-		/* just in case there no content*/
-		padding: 20px 25px 30px;
-		margin: 25px 0;
-		/* shadows and rounded borders */
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		border-radius: 5px;
-		-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-		-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	}
-	
-	.form-signin input[type=text],
-	.form-signin button {
-		width: 100%;
-		display: block;
-		margin-bottom: 10px;
-		z-index: 1;
-		position: relative;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-	
-	.form-signin .form-control:focus {
-		border-color: rgb(109, 134, 162);
-	}
-</style>
-
 <div class="blue" style="background-color: #e0f3fb;min-height: 300px;">
 	<div class="container flex-container" style="min-height: 300px;padding: 10px 10px;">
 		<div class="hd1 child-1" style="width: 85%">
