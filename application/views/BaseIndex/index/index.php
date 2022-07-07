@@ -43,7 +43,7 @@
 			Лаборатория патоморфологической и молекулярно-генетической диагностики  опухолевых и предопухолевых  заболеваний  человека
 		</div>
 		<div class="child-2">
-			<?=HTML::image('media/media/img/image1.webp', ['id' => 'img1', 'alt' => ''])?>
+			<?=HTML::image('media/media/img/image1.webp', ['class' => 'img1', 'alt' => ''])?>
 		</div>
 	</div>
 </div>
@@ -51,7 +51,7 @@
 <div style="min-height: 300px;">
 	<div class="container flex-container" style="min-height: 300px;padding: 10px 0px;">
 		<div class="child-1">
-			<?=HTML::image('media/media/img/image3.jpg', ['id' => 'img1', 'alt' => ''])?>
+			<?=HTML::image('media/media/img/image3.jpg', ['class' => 'img1', 'alt' => ''])?>
 		</div>
 		<div class="child-2">
 			<div class="jumbotron card">
@@ -78,10 +78,10 @@
 		</p>
 		<div class="row">
 			<div class="col-md-6">
-				<?=HTML::image('media/media/img/image4.jpg', ['id' => 'img2', 'alt' => ''])?>
+				<?=HTML::image('media/media/img/image4.jpg', ['class' => 'img2', 'alt' => ''])?>
 			</div>
 			<div class="col-md-6">
-				<?=HTML::image('media/media/img/image5.jpg', ['id' => 'img2', 'alt' => ''])?>
+				<?=HTML::image('media/media/img/image5.jpg', ['class' => 'img2', 'alt' => ''])?>
 			</div>
 		</div>
 	</div>

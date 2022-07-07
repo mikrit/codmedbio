@@ -20,8 +20,8 @@
 		которому поручена организация доставки и оплаты исследования.
 	</p>
 	<p>
-		<?=HTML::image('media/media/img/image6.jpg', ['id' => 'img1', 'alt' => ''])?>
-		<?=HTML::image('media/media/img/image7.jpg', ['id' => 'img1', 'alt' => ''])?>
+		<?=HTML::image('media/media/img/image6.jpg', ['class' => 'img1', 'alt' => ''])?>
+		<?=HTML::image('media/media/img/image7.jpg', ['class' => 'img1', 'alt' => ''])?>
 	</p>
 	<p>
 		Финансовая документация заполняется при заключении договора.

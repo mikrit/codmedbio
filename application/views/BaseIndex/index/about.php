@@ -27,7 +27,7 @@
 		</p>
 		
 		<p>
-			<?=HTML::image('media/media/img/image8.jpg', ['id' => 'img2', 'alt' => ''])?>
+			<?=HTML::image('media/media/img/image8.jpg', ['class' => 'img2', 'alt' => ''])?>
 		</p>
 		
 		<p>
@@ -47,8 +47,8 @@
 		</p>
 		
 		<p>
-			<?=HTML::image('media/media/img/image9.jpg', ['id' => 'img1', 'alt' => ''])?>
-			<?=HTML::image('media/media/img/image10.jpg', ['id' => 'img1', 'alt' => ''])?>
+			<?=HTML::image('media/media/img/image9.jpg', ['class' => 'img1', 'alt' => ''])?>
+			<?=HTML::image('media/media/img/image10.jpg', ['class' => 'img1', 'alt' => ''])?>
 		</p>
 		
 		<p>
