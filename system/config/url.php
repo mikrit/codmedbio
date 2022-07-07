@@ -13,7 +13,8 @@ return [
 		// Do not forget to escape your dots (.) as these are regex patterns.
 		// These patterns should always fully match,
 		// as they are prepended with `^` and appended with `$`
-		'codmedbio*'
+		'codmedbio',
+		'codmedbio.ai-tech.ru'
 	],
 
 ];
