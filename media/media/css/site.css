@@ -67,8 +67,8 @@ body {
     }
 
     .img1 {
-        width: 450px;
-        height: 230px;
+        width: 350px;
+        height: 200px;
         border-radius: 15px;
         margin-bottom: 20px;
     }
@@ -76,6 +76,12 @@ body {
     .img2 {
         width: 330px;
         height: 430px;
+        border-radius: 15px;
+    }
+
+    .img3 {
+        width: 350px;
+        height: 180px;
         border-radius: 15px;
     }
 
@@ -90,12 +96,6 @@ body {
 
     #error_fio{
         font-size: 12px;
-    }
-
-    .img3 {
-        width: 450px;
-        height: 180px;
-        border-radius: 15px;
     }
 }
 
@@ -113,8 +113,8 @@ body {
     }
 
     .img1 {
-        width: 400px;
-        height: 220px;
+        width: 340px;
+        height: 200px;
         border-radius: 10px;
         margin-bottom: 20px;
     }
@@ -122,6 +122,12 @@ body {
     .img2 {
         width: 450px;
         height: 580px;
+    }
+
+    .img3 {
+        width: 690px;
+        height: 180px;
+        border-radius: 15px;
     }
 
     body {
@@ -162,6 +168,12 @@ body {
         height: 470px;
     }
 
+    .img3 {
+        width: 100%;
+        height: 300px;
+        border-radius: 15px;
+    }
+
     #f_img {
         display: initial;
     }
@@ -169,12 +181,6 @@ body {
     #search {
         max-width: 400px;
         height: 280px;
-    }
-
-    .img3 {
-        width: 100%;
-        height: 300px;
-        border-radius: 15px;
     }
 }
 
