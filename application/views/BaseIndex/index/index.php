@@ -1,63 +1,119 @@
 <?php defined('SYSPATH') or die('No direct script access.');?>
 
-<div class="blue" style="background-color: #e0f3fb;min-height: 300px;">
-	<div class="container flex-container" style="min-height: 300px;padding: 10px 10px;">
-		<div class="hd1 child-1" style="width: 85%">
-			Лаборатория патоморфологической и молекулярно-генетической диагностики  опухолевых и предопухолевых  заболеваний  человека
-		</div>
-		<div class="child-2">
-			<?=HTML::image('media/media/img/image1.webp', ['class' => 'img1', 'alt' => ''])?>
-		</div>
-	</div>
-</div>
-
-<div style="min-height: 300px;">
-	<div class="container flex-container" style="min-height: 300px;padding: 10px 0px;">
-		<div class="child-1">
-			<?=HTML::image('media/media/img/image3.jpg', ['class' => 'img1', 'alt' => ''])?>
-		</div>
-		<div class="child-2">
-			<div class="jumbotron card">
-				<h2>Проверить анализ</h2>
-				<div id="error_fio" class="alert alert-danger" role="alert" style="display: none">
-					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-					<span class="sr-only">Error:</span> Проверьте правильность написания ФИО
+<main class="flex-shrink-0">
+	<div class="container-xl">
+		<div id="first">
+			<div class="fl-block">
+				<div id="f_title" class="flex-item align-self-start">
+					<div style="padding: 10px;">Лаборатория патоморфологической и молекулярно-генетической диагностики опухолевых и предопухолевых заболеваний человека</div>
 				</div>
-				<form id="search" class="form-signin" method="post">
-					<?=Form::input('ФИО', '', array('type' => 'text', 'id' => 'fio', 'placeholder' => 'ФИО', 'class' => 'form-control', 'required' => ''));?>
-					<?=Form::input('Номер анализа', '', array('type' => 'text', 'id' => 'number', 'placeholder' => '№ исследования', 'class' => 'form-control', 'required' => ''));?>
-					<?=HTML::anchor('#', 'Проверить', array('id' => 'check_analiz', 'class' => 'btn btn-primary ladda-button', 'data-style' => 'zoom-in'));?>
-				</form>
+				<div class="flex-item" style="width: 500px!important;">
+					<form id="search" method="post" autocomplete="off">
+						<h4>Проверить анализ</h4>
+						<div id="error_fio" class="alert alert-danger" role="alert" style="display: none">
+							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							<span class="sr-only">Error:</span> Проверьте правильность написания ФИО
+						</div>
+						<div>
+							<div class="form-group mt-1">
+								<input id="fio" class="form-control" type="text" placeholder="ФИО" required>
+							</div>
+							<div class="form-group mt-1">
+								<input id="number" class="form-control" type="text" placeholder="Номер анализа" required>
+							</div>
+							<div>
+								<button id="check_analiz" type="button" class="btn btn-primary">Проверить</button>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
-
-<div class="blue" style="background-color: #e0f3fb;min-height: 300px;">
-	<div class="container" style="padding: 10px 10px;">
-		<h4 style="color: #0057a7;font-weight: bold;">О НАС</h4>
-		<p>
-			Код Мед Био - это коммерческая организация, созданная на базе и в тесном сотрудничестве с ФГБУ "РОНЦ им. Н.Н. Блохина" Минздрава России. Основная задача нашей организации осуществление широкого спектра морфологических исследований начиная от традиционных патологоанатомических до современных молекулярно-биологических исследований.
-		</p>
-		<div class="row">
-			<div class="col-md-6">
-				<?=HTML::image('media/media/img/image4.jpg', ['class' => 'img2', 'alt' => ''])?>
-			</div>
-			<div class="col-md-6">
-				<?=HTML::image('media/media/img/image5.jpg', ['class' => 'img2', 'alt' => ''])?>
+		
+		<div id="second" class="block">
+			<h3>О НАС</h3>
+			<p>
+				Код Мед Био - это коммерческая организация, созданная на базе и в тесном сотрудничестве с ФГБУ "РОНЦ им. Н.Н. Блохина" Минздрава России. Основная задача нашей организации осуществление широкого спектра морфологических исследований начиная от традиционных патологоанатомических до современных молекулярно-биологических исследований.
+			</p>
+			<div class="row">
+				<div class="col-md-6 col-lg-6 text-center">
+					<?=HTML::image('media/media/img/image4.jpg', ['class' => 'img1 img-fluid', 'alt' => 'img1'])?>
+				</div>
+				<div class="col-md-6 col-lg-6 text-center">
+					<?=HTML::image('media/media/img/image5.jpg', ['id' => 'f_img', 'class' => 'img1 img-fluid', 'alt' => 'img2'])?>
+				</div>
 			</div>
 		</div>
+		
+		<div id="third">
+			<h3 class="block">ЛИЦЕНЗИИ</h3>
+			<div class="row">
+				<div class="col-md-12 col-lg-4 text-center">
+					<?=HTML::image('media/media/img/Lic_1.jpg', ['class' => 'img2 img-fluid', 'alt' => 'licence_1'])?>
+				</div>
+				<div class="col-md-12 col-lg-4 text-center">
+					<?=HTML::image('media/media/img/Lic_2.jpg', ['class' => 'img2 img-fluid', 'alt' => 'licence_2'])?>
+				</div>
+				<div class="col-md-12 col-lg-4 text-center">
+					<?=HTML::image('media/media/img/Lic_3.jpg', ['class' => 'img2 img-fluid', 'alt' => 'licence_3'])?>
+				</div>
+			</div>
+		</div>
+		
+		<div id="map" style="margin-bottom: 165px;">
+			<h3 style="padding: 0 30px;">КОНТАКТЫ</h3>
+			<?=HTML::image('media/media/img/map.jpg', ['class' => 'img-fluid', 'alt' => 'map'])?>
+		</div>
 	</div>
-</div>
+</main>
 
-<div style="height: 300px;">
-	<div class="container">
-	
-	</div>
-</div>
-
-<div style="height: 300px;">
-	<div class="container">
-	
-	</div>
-</div>
+<script>
+	$('#check_analiz').on('click', function(){
+		let fio = $('#fio').val();
+		let number = $('#number').val();
+		
+		$('#fio').css({'border-color': '#ccc'});
+		$('#number').css({'border-color': '#ccc'});
+		
+		$('#error_fio').hide();
+		
+		if(fio === '' || number === '')
+		{
+			if(fio === '')
+			{
+				$('#fio').css({'border-color': '#FF2D3F'});
+			}
+			
+			if(number === '')
+			{
+				$('#number').css({'border-color': '#FF2D3F'});
+			}
+		}
+		else
+		{
+			let pat = /[А-ЯЁ][а-яё\-]+\s(\-?[А-ЯЁ]\.|[А-ЯЁ]-[А-ЯЁ]\.){2,}$/;
+			
+			if(pat.test(fio) === false)
+			{
+				$('#error_fio').show();
+			}
+			else
+			{
+				$.ajax({
+					type: "POST",
+					url: "ajax/get_status",
+					dataType: "json",
+					data: {
+						fio: fio,
+						number: number
+					},
+					success: function(result){
+						$('#status').html(result);
+					}
+				});
+			}
+		}
+		
+		return false;
+	});
+</script>

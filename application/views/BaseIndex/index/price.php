@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.') ?>
 
-<div class="container">
+<div class="container" style="margin-bottom: 250px;">
 	<h3 style="color: #0057a7;font-weight: bold;margin: 25px 0 20px 0;">УСЛУГИ И ЦЕНЫ</h3>
 	<?=Form::open(NULL, ['id' => 'form_find'])?>
 	<?=Form::input('find', $find, ['id' => 'find', 'placeholder' => 'Введите название анализа'])?>
@@ -32,6 +32,4 @@
 		<?php }?>
 	</table>
 </div>
-
-<br/><br/><br/>
 

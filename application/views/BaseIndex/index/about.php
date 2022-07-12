@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');?>
 
-<div class="container">
+<div class="container" style="margin-bottom: 250px;">
 	<h3 style="color: #0057a7;font-weight: bold;margin: 25px 0 20px 0;">О ЛАБОРАТОРИИ</h3>
 	<div class="txt" style="text-align: justify;">
 		<p>
@@ -27,7 +27,7 @@
 		</p>
 		
 		<p>
-			<?=HTML::image('media/media/img/image8.jpg', ['class' => 'img2', 'alt' => ''])?>
+			<?=HTML::image('media/media/img/image8.jpg', ['class' => 'img3', 'alt' => ''])?>
 		</p>
 		
 		<p>
@@ -83,7 +83,7 @@
 			Материал  тонкоигольных пункций, жидкостей и  мазков с поверхности шейки матки  и др. изучают высококвалифицированные
 			специалисты-цитологи.
 		</p>
-		<p style="margin-bottom: 180px;">
+		<p>
 			Основным достоинством ООО КодМедБио  следует считать  команду высококвалифицированных специалистов,
 			осуществляющих диагностику в сжатые сроки выполнения исследований.
 			Морфологические результаты после окончания цикла диагностики обобщаются общетерапевтическими

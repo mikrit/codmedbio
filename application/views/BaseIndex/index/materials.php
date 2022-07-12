@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.')?>
 
-<div class="container" style="text-align: justify;">
+<div class="container" style="text-align: justify;margin-bottom: 250px;">
 	<h3 style="color: #0057a7;font-weight: bold;margin: 25px 0 20px 0;">ПРИЁМ МАТЕРИАЛА</h3>
 	<p>
 		Материал принимается лично от больного, от уполномоченного  им лица медицинским учреждением или по почте.
