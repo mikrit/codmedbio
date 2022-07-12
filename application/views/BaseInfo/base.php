@@ -37,9 +37,7 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse">
-                    <?=$menu?>
-                </div>
+				<?=$menu?>
             </div>
         </div>
 
