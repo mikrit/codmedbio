@@ -65,7 +65,7 @@
 			</div>
 		</div>
 		
-		<div id="map" style="margin-bottom: 165px;">
+		<div id="map" style="margin-bottom: 200px;">
 			<h3 style="padding: 0 30px;">КОНТАКТЫ</h3>
 			<?=HTML::image('media/media/img/map.jpg', ['class' => 'img-fluid', 'alt' => 'map'])?>
 		</div>
