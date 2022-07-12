@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		
-		<div id="second" class="block" style="margin-bottom: 15px;">
+		<div id="second" style="margin-bottom: 15px;">
 			<h3>О НАС</h3>
 			<p style="text-align: justify;">
 				ООО «КОД-МЕД-БИО» - это коммерческая организация, созданная на базе и в тесном сотрудничестве с ФГБУ "РОНЦ им. Н.Н. Блохина" Минздрава России. Основная задача нашей организации осуществление широкого спектра морфологических исследований начиная от традиционных патологоанатомических до современных молекулярно-биологических исследований.
@@ -51,7 +51,7 @@
 		</div>
 		
 		<div id="third" style="margin-bottom: 15px;">
-			<h3 class="block">ЛИЦЕНЗИИ</h3>
+			<h3>ЛИЦЕНЗИИ</h3>
 			<div class="row">
 				<div class="col-md-12 col-lg-4 text-center">
 					<?=HTML::image('media/media/img/Lic_1.jpg', ['class' => 'img2 img-fluid', 'alt' => 'licence_1'])?>
@@ -66,7 +66,7 @@
 		</div>
 		
 		<div id="map" style="margin-bottom: 200px;">
-			<h3 style="padding: 0 30px;">КОНТАКТЫ</h3>
+			<h3>КОНТАКТЫ</h3>
 			<?=HTML::image('media/media/img/map.jpg', ['class' => 'img-fluid', 'alt' => 'map'])?>
 		</div>
 	</div>
