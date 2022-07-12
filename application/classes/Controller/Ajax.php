@@ -186,11 +186,11 @@ class Controller_Ajax extends Controller
 
         if($flag == 1)
         {
-            echo json_encode($statuses[$status]);
+            echo json_encode('Статус: '.$statuses[$status]);
         }
 		else
 		{
-			echo json_encode('Анализ не найден.');
+			echo json_encode('Анализ не найден');
 		}
     }
 

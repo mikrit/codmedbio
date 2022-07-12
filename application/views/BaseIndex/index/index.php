@@ -10,10 +10,15 @@
 				<div class="flex-item" style="width: 500px!important;">
 					<form id="search" method="post" autocomplete="off">
 						<h4>Проверить анализ</h4>
-						<div id="error_fio" class="alert alert-danger" role="alert" style="display: none">
-							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-							<span class="sr-only">Error:</span> Проверьте правильность написания ФИО
+						
+						<div id="error_fio" class="alert alert-danger" role="alert" style="display: none;">
+							Проверьте правильность написания ФИО
 						</div>
+						
+						<div id="answer">
+							<b><span id="status"></span></b>
+						</div>
+						
 						<div>
 							<div class="form-group mt-1">
 								<input id="fio" class="form-control" type="text" placeholder="ФИО" required>
@@ -32,8 +37,8 @@
 		
 		<div id="second" class="block">
 			<h3>О НАС</h3>
-			<p>
-				Код Мед Био - это коммерческая организация, созданная на базе и в тесном сотрудничестве с ФГБУ "РОНЦ им. Н.Н. Блохина" Минздрава России. Основная задача нашей организации осуществление широкого спектра морфологических исследований начиная от традиционных патологоанатомических до современных молекулярно-биологических исследований.
+			<p style="text-align: justify;">
+				ООО «КОД-МЕД-БИО» - это коммерческая организация, созданная на базе и в тесном сотрудничестве с ФГБУ "РОНЦ им. Н.Н. Блохина" Минздрава России. Основная задача нашей организации осуществление широкого спектра морфологических исследований начиная от традиционных патологоанатомических до современных молекулярно-биологических исследований.
 			</p>
 			<div class="row">
 				<div class="col-md-6 col-lg-6 text-center">
@@ -75,6 +80,7 @@
 		$('#fio').css({'border-color': '#ccc'});
 		$('#number').css({'border-color': '#ccc'});
 		
+		$('#answer').show();
 		$('#error_fio').hide();
 		
 		if(fio === '' || number === '')
@@ -95,6 +101,7 @@
 			
 			if(pat.test(fio) === false)
 			{
+				$('#answer').hide();
 				$('#error_fio').show();
 			}
 			else

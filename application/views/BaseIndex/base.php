@@ -40,17 +40,17 @@
 		<footer class="footer mt-auto py-3 border-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-12 col-md align-self-center">
+					<div class="col-12 col-md align-self-center" style="padding: 0 0 0 25px;">
 						<h4>ООО «КодМедБио»</h4>
 					</div>
-					<div class="col-6 col-md align-self-center">
+					<div class="col-6 col-md align-self-center" style="padding: 0 0 0 25px;">
 						<ul class="list-unstyled text-small">
 							<li><a class="text-muted" href="/">Главная</a></li>
 							<li><a class="text-muted" href="/index/about">О нас</a></li>
 							<li><a class="text-muted" href="/index/materials">Приём материалов</a></li>
 						</ul>
 					</div>
-					<div class="col-6 col-md align-self-center">
+					<div class="col-6 col-md align-self-center" style="padding-right: 0px;">
 						<ul class="list-unstyled text-small">
 							<li><a class="text-muted" href="/index/price">Услуги и цены</a></li>
 							<li><a class="text-muted" href="/index/staff">Наши сотрудники</a></li>
@@ -59,7 +59,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-md text-center">
+					<div class="col-12 col-md text-center" style="padding: 0 0 0 25px;">
 						<p class="text-muted text-center"><small><a href="http://www.ai-tech.ru">ai-tech.ru</a> &copy;2022<?=(date('Y') != 2022) ? '-'.date('Y') : ''?> All Rights Reserved.</small></p>
 					</div>
 				</div>
